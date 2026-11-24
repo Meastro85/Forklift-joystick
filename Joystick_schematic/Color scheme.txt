@@ -1,0 +1,8 @@
+push 5 - Blue
+push 6 - Green
+push 7 - Red
+push 8 - Yellow
+GND - black
+
+Prop 1 - terminal 16 - A0 - X as - Orange
+Prop 2 - terminal 5 - A1 - Y as - Grey
