@@ -1,10 +1,12 @@
 #include <Arduino.h>
 #include <PushButtons.h>
 #include <Axes.h>
+#include "app/application.hpp"
 
 using namespace Joystick;
 
-// Order must match the Button enum: 3A, 3B, 4A, 4B, 5, 6, 7
+joystick::Application application;
+
 const uint8_t BUTTON_PINS[PushButtons::COUNT] = {2, 3, 4, 5, 6, 7, 8};
 const uint8_t AXIS_PINS[Axes::COUNT] = {A0, A1};
 PushButtons buttons(BUTTON_PINS);
@@ -16,6 +18,8 @@ void onButton(Button button, bool pressed) {
 }
 
 void setup() {
+  // application.begin();
+
   Serial.begin(115200);
   buttons.begin();
   buttons.onChange(onButton);
@@ -35,6 +39,8 @@ void setup() {
 }
 
 void loop() {
+  // application.update();
+
   buttons.update();
   axes.update();
 
